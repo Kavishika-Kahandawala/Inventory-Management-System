@@ -61,16 +61,18 @@ public class Customer extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         c_name = new javax.swing.JTextField();
         c_tp = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btncsave = new javax.swing.JButton();
+        btncsearch = new javax.swing.JButton();
+        btncupdate = new javax.swing.JButton();
+        btncdelete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         c_table = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         c_search = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        c_search_table = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -88,39 +90,39 @@ public class Customer extends javax.swing.JPanel {
         c_tp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         c_tp.setText("0");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/icons/save.png"))); // NOI18N
-        jButton1.setText("Save");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btncsave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btncsave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/package_icons/save.png"))); // NOI18N
+        btncsave.setText("Save");
+        btncsave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btncsaveActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/icons/search.png"))); // NOI18N
-        jButton2.setText("Search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btncsearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btncsearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/package_icons/search.png"))); // NOI18N
+        btncsearch.setText("Search");
+        btncsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btncsearchActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/icons/update.png"))); // NOI18N
-        jButton3.setText("Update");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btncupdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btncupdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/package_icons/update.png"))); // NOI18N
+        btncupdate.setText("Update");
+        btncupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btncupdateActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/icons/delete.png"))); // NOI18N
-        jButton4.setText("Delete");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btncdelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btncdelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/package_icons/delete.png"))); // NOI18N
+        btncdelete.setText("Delete");
+        btncdelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btncdeleteActionPerformed(evt);
             }
         });
 
@@ -131,7 +133,7 @@ public class Customer extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(btncsave)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
@@ -139,12 +141,12 @@ public class Customer extends javax.swing.JPanel {
                     .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(c_name, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(btncsearch)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(btncupdate)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addComponent(btncdelete)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,11 +162,11 @@ public class Customer extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton3)
-                        .addComponent(jButton4))
+                        .addComponent(btncupdate)
+                        .addComponent(btncdelete))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)))
+                        .addComponent(btncsave)
+                        .addComponent(btncsearch)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
@@ -179,6 +181,11 @@ public class Customer extends javax.swing.JPanel {
                 "ID", "Customer Name", "T.P. Number"
             }
         ));
+        c_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c_tableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(c_table);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -206,7 +213,7 @@ public class Customer extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +227,17 @@ public class Customer extends javax.swing.JPanel {
                 .addGap(19, 19, 19))
         );
 
+        c_search_table.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c_search_table.setText("0");
+        c_search_table.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                c_search_tableKeyReleased(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("Search :");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -230,16 +248,29 @@ public class Customer extends javax.swing.JPanel {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(c_search_table, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(c_search_table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -262,7 +293,7 @@ public class Customer extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btncsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncsaveActionPerformed
         // TODO add your handling code here:
         
         String name = c_name.getText();
@@ -272,6 +303,8 @@ public class Customer extends javax.swing.JPanel {
         
             Statement s = db.mycon().createStatement();
             s.executeUpdate("INSERT INTO customer (Customer_name,Tp_Number) VALUES ('"+name+"','"+tp+"')");
+                JOptionPane.showMessageDialog(null, "Customer Data Saved");
+            
             
         } catch (SQLException e) {
             System.out.println("e");
@@ -279,11 +312,11 @@ public class Customer extends javax.swing.JPanel {
    
         }
         
+        table_load();
         
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btncsaveActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btncsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncsearchActionPerformed
         // Search Customers
        
         String search = c_search.getText();
@@ -302,9 +335,12 @@ public class Customer extends javax.swing.JPanel {
         } catch(SQLException e){
                 System.out.println("e");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+        table_load();
+        
+    }//GEN-LAST:event_btncsearchActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btncupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncupdateActionPerformed
         // Customer Update
         
         String name = c_name.getText();
@@ -315,14 +351,16 @@ public class Customer extends javax.swing.JPanel {
         
             Statement s = db.mycon().createStatement();
             s.executeUpdate("UPDATE customer SET Customer_name='"+name+"', Tp_Number = '"+tp+"' WHERE cid = '"+id+"'");
+                JOptionPane.showMessageDialog(null, "Customer Data Updated");
         
         }catch (SQLException e){
                 System.out.println("e");
         }
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+        table_load();
+    }//GEN-LAST:event_btncupdateActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btncdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncdeleteActionPerformed
         // Customer Delete
         
         String id = c_search.getText();
@@ -332,26 +370,80 @@ public class Customer extends javax.swing.JPanel {
         
             Statement s = db.mycon().createStatement();
             s.executeUpdate("DELETE  FROM customer WHERE Cid ='"+id+"'");
+                JOptionPane.showMessageDialog(null, "Customer Data Deleted");
         
         }catch (SQLException e){
                 System.out.println("e");
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+        
+        table_load();
+        
+    }//GEN-LAST:event_btncdeleteActionPerformed
+
+    private void c_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c_tableMouseClicked
+        // Mouse click get data to textfeild
+        
+        int r = c_table.getSelectedRow();
+        
+        String id = c_table.getValueAt(r, 0).toString();
+        String name = c_table.getValueAt(r,1).toString(); 
+        String tp = c_table.getValueAt(r,2).toString(); 
+        
+        c_search.setText(id);
+        c_name.setText(name);
+        c_tp.setText(tp);
+        
+        
+    }//GEN-LAST:event_c_tableMouseClicked
+
+    private void c_search_tableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_c_search_tableKeyReleased
+        // Search customer table with customer name
+        
+        String name = c_search_table.getText();
+        
+        try{
+        
+               DefaultTableModel dt = (DefaultTableModel) c_table.getModel();
+               dt.setRowCount(0);
+               Statement s = db.mycon().createStatement();
+               
+               ResultSet rs = s.executeQuery("SELECT * FROM customer WHERE Customer_name LIKE '%"+name+"%' ");
+               
+               while (rs.next()){
+               
+                   Vector v = new Vector();
+                   
+                   v.add(rs.getString(1));
+                   v.add(rs.getString(2));
+                   v.add(rs.getString(3));
+                   
+                   dt.addRow(v);
+                   
+                   
+               }
+        
+        }catch (Exception e){
+            
+            table_load();
+        }
+    }//GEN-LAST:event_c_search_tableKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncdelete;
+    private javax.swing.JButton btncsave;
+    private javax.swing.JButton btncsearch;
+    private javax.swing.JButton btncupdate;
     private javax.swing.JTextField c_name;
     private javax.swing.JTextField c_search;
+    private javax.swing.JTextField c_search_table;
     private javax.swing.JTable c_table;
     private javax.swing.JTextField c_tp;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
