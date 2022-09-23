@@ -4,10 +4,6 @@
  */
 package inventory.management.system;
 
-/**
- *
- * @author Horizon
- */
 public class InventoryManagementSystem {
 
     /**
