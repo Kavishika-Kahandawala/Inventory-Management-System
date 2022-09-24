@@ -34,6 +34,8 @@ public class Customer extends javax.swing.JPanel {
             v.add(rs.getString(1));
             v.add(rs.getString(2));
             v.add(rs.getString(3));
+            v.add(rs.getString(4));
+            v.add(rs.getString(5));
             
             dt.addRow(v);
             
@@ -59,12 +61,16 @@ public class Customer extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        c_name = new javax.swing.JTextField();
-        c_tp = new javax.swing.JTextField();
+        c_fname = new javax.swing.JTextField();
+        c_lname = new javax.swing.JTextField();
         btncsave = new javax.swing.JButton();
         btncsearch = new javax.swing.JButton();
         btncupdate = new javax.swing.JButton();
         btncdelete = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        c_tp = new javax.swing.JTextField();
+        c_email = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         c_table = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -79,16 +85,16 @@ public class Customer extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Name :");
+        jLabel1.setText("First Name :");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("T.P.Number :");
+        jLabel2.setText("Last Name  :");
 
-        c_name.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        c_name.setText("0");
+        c_fname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c_fname.setText("0");
 
-        c_tp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        c_tp.setText("0");
+        c_lname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c_lname.setText("0");
 
         btncsave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btncsave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/package_icons/save.png"))); // NOI18N
@@ -126,40 +132,74 @@ public class Customer extends javax.swing.JPanel {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setText("T.P.Number :");
+
+        c_tp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c_tp.setText("0");
+
+        c_email.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c_email.setText("0");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setText("Email :");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btncsave)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(c_name, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btncsearch)
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
                         .addGap(18, 18, 18)
-                        .addComponent(btncupdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(btncdelete)))
-                .addContainerGap(152, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(c_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(c_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btncsave)
+                                .addGap(18, 18, 18)
+                                .addComponent(btncsearch)
+                                .addGap(18, 18, 18)
+                                .addComponent(btncupdate)
+                                .addGap(18, 18, 18)
+                                .addComponent(btncdelete))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(c_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c_fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
+                    .addComponent(c_lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
                     .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btncupdate)
@@ -167,18 +207,18 @@ public class Customer extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btncsave)
                         .addComponent(btncsearch)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         c_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Customer Name", "T.P. Number"
+                "ID", "First Name", "Last Name", "TP Number", "Email"
             }
         ));
         c_table.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -195,6 +235,11 @@ public class Customer extends javax.swing.JPanel {
 
         c_search.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         c_search.setText("0");
+        c_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_searchActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Search ID :");
@@ -211,16 +256,16 @@ public class Customer extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(c_search, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addContainerGap()
                         .addComponent(jLabel3)))
-                .addContainerGap(313, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(c_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
@@ -236,7 +281,7 @@ public class Customer extends javax.swing.JPanel {
         });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("Search :");
+        jLabel5.setText("Search First Name :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -261,20 +306,19 @@ public class Customer extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(c_search_table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(43, 43, 43))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -287,22 +331,22 @@ public class Customer extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btncsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncsaveActionPerformed
         // TODO add your handling code here:
         
-        String name = c_name.getText();
+        String fname = c_fname.getText();
+        String lname = c_lname.getText();
         String tp = c_tp.getText();
+        String email = c_email.getText();
         
         try {
         
             Statement s = db.mycon().createStatement();
-            s.executeUpdate("INSERT INTO customer (Customer_name,Tp_Number) VALUES ('"+name+"','"+tp+"')");
+            s.executeUpdate("INSERT INTO customer (Customer_FirstName,Customer_LastName,Customer_TP,Customer_Email) VALUES ('"+fname+"','"+lname+"','"+tp+"','"+email+"')");
                 JOptionPane.showMessageDialog(null, "Customer Data Saved");
             
             
@@ -328,8 +372,10 @@ public class Customer extends javax.swing.JPanel {
             
             if (rs.next()){
             
-                c_name.setText(rs.getString("Customer_name"));
-                c_tp.setText(rs.getString("Tp_Number"));
+                c_fname.setText(rs.getString("Customer_FirstName"));
+                c_lname.setText(rs.getString("Customer_LastName"));
+                c_tp.setText(rs.getString("Customer_TP"));
+                c_email.setText(rs.getString("Customer_Email"));
                 
             }
         } catch(SQLException e){
@@ -343,14 +389,16 @@ public class Customer extends javax.swing.JPanel {
     private void btncupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncupdateActionPerformed
         // Customer Update
         
-        String name = c_name.getText();
+        String fname = c_fname.getText();
+        String lname = c_lname.getText();
         String tp = c_tp.getText();
+        String email = c_email.getText();
         String id = c_search.getText();
         
         try{
         
             Statement s = db.mycon().createStatement();
-            s.executeUpdate("UPDATE customer SET Customer_name='"+name+"', Tp_Number = '"+tp+"' WHERE cid = '"+id+"'");
+            s.executeUpdate("UPDATE customer SET Customer_FirstName='"+fname+"', Customer_LastName = '"+lname+"',Customer_TP = '"+tp+"',Customer_Email = '"+email+"' WHERE cid = '"+id+"'");
                 JOptionPane.showMessageDialog(null, "Customer Data Updated");
         
         }catch (SQLException e){
@@ -386,12 +434,16 @@ public class Customer extends javax.swing.JPanel {
         int r = c_table.getSelectedRow();
         
         String id = c_table.getValueAt(r, 0).toString();
-        String name = c_table.getValueAt(r,1).toString(); 
-        String tp = c_table.getValueAt(r,2).toString(); 
+        String fname = c_table.getValueAt(r,1).toString(); 
+        String lname = c_table.getValueAt(r,2).toString(); 
+        String tp = c_table.getValueAt(r,3).toString();
+        String email = c_table.getValueAt(r,4).toString();
         
         c_search.setText(id);
-        c_name.setText(name);
+        c_fname.setText(fname);
+        c_lname.setText(lname);
         c_tp.setText(tp);
+        c_email.setText(email);
         
         
     }//GEN-LAST:event_c_tableMouseClicked
@@ -407,7 +459,7 @@ public class Customer extends javax.swing.JPanel {
                dt.setRowCount(0);
                Statement s = db.mycon().createStatement();
                
-               ResultSet rs = s.executeQuery("SELECT * FROM customer WHERE Customer_name LIKE '%"+name+"%' ");
+               ResultSet rs = s.executeQuery("SELECT * FROM customer WHERE Customer_FirstName LIKE '%"+name+"%' ");
                
                while (rs.next()){
                
@@ -416,6 +468,8 @@ public class Customer extends javax.swing.JPanel {
                    v.add(rs.getString(1));
                    v.add(rs.getString(2));
                    v.add(rs.getString(3));
+                   v.add(rs.getString(4));
+                   v.add(rs.getString(5));
                    
                    dt.addRow(v);
                    
@@ -428,13 +482,19 @@ public class Customer extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_c_search_tableKeyReleased
 
+    private void c_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_searchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncdelete;
     private javax.swing.JButton btncsave;
     private javax.swing.JButton btncsearch;
     private javax.swing.JButton btncupdate;
-    private javax.swing.JTextField c_name;
+    private javax.swing.JTextField c_email;
+    private javax.swing.JTextField c_fname;
+    private javax.swing.JTextField c_lname;
     private javax.swing.JTextField c_search;
     private javax.swing.JTextField c_search_table;
     private javax.swing.JTable c_table;
@@ -444,6 +504,8 @@ public class Customer extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
