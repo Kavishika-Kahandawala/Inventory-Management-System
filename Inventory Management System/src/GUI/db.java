@@ -1,18 +1,21 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package GUI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 /**
  *
- * @author Horizon
+ * @author Kavishika
  */
 public class db {
-    public static Connection mycon(){
+   
+ public static Connection mycon(){
  
  
      Connection con = null ;
@@ -20,7 +23,8 @@ public class db {
      try {
          
          Class.forName("com.mysql.jdbc.Driver");
-         con = DriverManager.getConnection("jdbc:mysql://localhost/pos","root","");
+         con = DriverManager.getConnection("jdbc:mysql://localhost/ims","root","");
+         System.out.println("Connection to db Established");
          return con;
          
          
@@ -29,5 +33,11 @@ public class db {
          System.out.println(e);
          return null;
      }
-    }
+     
+ 
+ 
+ }   
+    
+    
+    
 }
