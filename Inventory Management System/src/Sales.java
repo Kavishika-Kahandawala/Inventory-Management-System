@@ -186,7 +186,7 @@ public class Sales extends javax.swing.JPanel {
             }
         });
 
-        jPanel7.setBackground(new java.awt.Color(241, 247, 245));
+        jPanel7.setBackground(new java.awt.Color(241, 246, 247));
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
