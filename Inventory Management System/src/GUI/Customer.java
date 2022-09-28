@@ -1,5 +1,6 @@
-package inventory.management.system;
+package GUI;
 
+import inventory.management.system.db;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

@@ -1,5 +1,9 @@
 
-package inventory.management.system;
+package GUI;
+
+import GUI.Customer;
+import inventory.management.system.JpanelLoader;
+import inventory.management.system.Sales;
 
 
 public class HomePage extends javax.swing.JFrame {
