@@ -299,7 +299,7 @@ public class Sales extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(225, 77, 42));
+        jButton3.setBackground(new java.awt.Color(255, 51, 0));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Remove All");
