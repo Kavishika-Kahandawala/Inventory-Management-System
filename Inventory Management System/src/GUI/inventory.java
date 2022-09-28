@@ -398,11 +398,19 @@ public class Inventory extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_spriceActionPerformed
 
+    private void txt_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_searchActionPerformed
+
+    private void chk_activeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_activeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chk_activeActionPerformed
+
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         // TODO add your handling code here:
-        
+
         //Add Product
-        
+
         //int pid = Integer.parseInt(txt_pid.getText());
         String pname = txt_pname.getText();
         String barcode = txt_bcode.getText();
@@ -416,27 +424,19 @@ public class Inventory extends javax.swing.JPanel {
         }else{
             status="0";
         }
-        
+
         try{
             Statement insert_pd = db.mycon().createStatement();
             insert_pd.executeUpdate( "INSERT INTO inventory(pname, barcode, cprice, sprice, quantity, sid, status) VALUES "
-                    + "('"+pname+"','"+barcode+"','"+cprice+"','"+sprice+"','"+quantity+"','"+sid+"','"+status+"')");
-            
+                + "('"+pname+"','"+barcode+"','"+cprice+"','"+sprice+"','"+quantity+"','"+sid+"','"+status+"')");
+
             //insert_pd.executeUpdate( "INSERT INTO test(pname, barcode, cprice, sprice, quantity, sid, status ) VALUES "
-                    //+ "('"+pname+"','"+barcode+"','"+cprice+"','"+sprice+"','"+quantity+"','"+sid+"','"+status+"')");
+                //+ "('"+pname+"','"+barcode+"','"+cprice+"','"+sprice+"','"+quantity+"','"+sid+"','"+status+"')");
             JOptionPane.showMessageDialog(null,"Product has been saved successfully");
         }catch (SQLException e){
             System.out.println(e);
         }
     }//GEN-LAST:event_btn_saveActionPerformed
-
-    private void txt_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_searchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_searchActionPerformed
-
-    private void chk_activeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_activeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chk_activeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
