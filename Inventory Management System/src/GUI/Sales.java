@@ -1,9 +1,4 @@
 package GUI;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 public class Sales extends javax.swing.JPanel {
 
     public Sales() {

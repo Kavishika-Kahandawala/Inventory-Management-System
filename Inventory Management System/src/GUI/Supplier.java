@@ -1,8 +1,5 @@
 package GUI;
 
-
-//Coded by Mithun Wijayasiri
-
 public class Supplier extends javax.swing.JPanel {
 
     public Supplier() {
