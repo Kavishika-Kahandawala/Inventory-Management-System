@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import Code.JpanelLoader;
+
 /**
  *
  * @author Horizon

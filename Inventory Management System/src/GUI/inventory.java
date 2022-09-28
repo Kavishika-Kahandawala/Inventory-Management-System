@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Code.db;
 import java.awt.HeadlessException;
 import java.awt.TextArea;
 import java.sql.ResultSet;
