@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -71,6 +73,8 @@ public class Customer extends javax.swing.JPanel {
         c_tp = new javax.swing.JTextField();
         c_email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        tperror = new javax.swing.JLabel();
+        emailerror = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         c_table = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -80,8 +84,10 @@ public class Customer extends javax.swing.JPanel {
         c_search_table = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -137,12 +143,28 @@ public class Customer extends javax.swing.JPanel {
 
         c_tp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         c_tp.setText("0");
+        c_tp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                c_tpKeyReleased(evt);
+            }
+        });
 
         c_email.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         c_email.setText("0");
+        c_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                c_emailKeyReleased(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Email :");
+
+        tperror.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        tperror.setForeground(new java.awt.Color(255, 0, 0));
+
+        emailerror.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        emailerror.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -177,7 +199,11 @@ public class Customer extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(41, 41, 41)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(emailerror, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tperror, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -192,13 +218,17 @@ public class Customer extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(c_lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tperror, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(emailerror, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -228,6 +258,7 @@ public class Customer extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(c_table);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -346,9 +377,15 @@ public class Customer extends javax.swing.JPanel {
         try {
         
             Statement s = db.mycon().createStatement();
+            
+            if(c_fname.equals("") ||c_lname.equals("") || c_tp.equals("") || c_email.equals("") ){
+                    JOptionPane.showMessageDialog(null, "Fill every feild");
+                }
+            else{
             s.executeUpdate("INSERT INTO customer (Customer_FirstName,Customer_LastName,Customer_TP,Customer_Email) VALUES ('"+fname+"','"+lname+"','"+tp+"','"+email+"')");
                 JOptionPane.showMessageDialog(null, "Customer Data Saved");
             
+            }
             
         } catch (SQLException e) {
             System.out.println("e");
@@ -436,8 +473,8 @@ public class Customer extends javax.swing.JPanel {
         String id = c_table.getValueAt(r, 0).toString();
         String fname = c_table.getValueAt(r,1).toString(); 
         String lname = c_table.getValueAt(r,2).toString(); 
-        String tp = c_table.getValueAt(r,3).toString();
-        String email = c_table.getValueAt(r,4).toString();
+        String tp = c_table.getValueAt(r,2).toString();
+        String email = c_table.getValueAt(r,2).toString();
         
         c_search.setText(id);
         c_fname.setText(fname);
@@ -486,6 +523,32 @@ public class Customer extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_c_searchActionPerformed
 
+    private void c_emailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_c_emailKeyReleased
+        // Validate Email address
+        
+        String PATTERN =  "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                            "[a-zA-Z0-9_+&*-]+)*@" +
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                            "A-Z]{2,7}$";
+        Pattern patt = Pattern.compile(PATTERN);
+        Matcher match = patt.matcher(c_email.getText());
+            if(!match.matches()){
+                emailerror.setText("Invalid Email");
+            }
+            else{
+                emailerror.setText(null);
+            }
+        
+        
+    }//GEN-LAST:event_c_emailKeyReleased
+
+    private void c_tpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_c_tpKeyReleased
+        // Validate TP number
+       
+       
+          
+    }//GEN-LAST:event_c_tpKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncdelete;
@@ -499,6 +562,7 @@ public class Customer extends javax.swing.JPanel {
     private javax.swing.JTextField c_search_table;
     private javax.swing.JTable c_table;
     private javax.swing.JTextField c_tp;
+    private javax.swing.JLabel emailerror;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -510,5 +574,6 @@ public class Customer extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel tperror;
     // End of variables declaration//GEN-END:variables
 }
