@@ -134,15 +134,12 @@
                                           <Component id="c_email" min="-2" pref="189" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="btncsave" min="-2" pref="255" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="btncupdate" min="-2" pref="105" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="btncdelete" min="-2" pref="105" max="-2" attributes="0"/>
-                                          </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="btncsave" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="btncupdate" min="-2" pref="105" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Component id="btncdelete" min="-2" pref="105" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -185,9 +182,9 @@
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Component id="btncsave" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btncupdate" pref="35" max="32767" attributes="0"/>
-                          <Component id="btncdelete" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btncdelete" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="btncupdate" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
