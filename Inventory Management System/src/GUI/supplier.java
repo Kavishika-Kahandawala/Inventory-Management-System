@@ -545,11 +545,11 @@ public class supplier extends javax.swing.JPanel {
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
         // Clear Text feilds:
         
-        s_search.setText(" ");
-        s_name.setText(" ");
+        s_search.setText("");
+        s_name.setText("");
         s_tp.setText(" ");
-        s_company.setText(" ");
-        s_email.setText(" ");
+        s_company.setText("");
+        s_email.setText("");
         
     }//GEN-LAST:event_btnclearActionPerformed
 
