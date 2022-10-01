@@ -1,8 +1,8 @@
 package GUI;
 
-public class Supplier extends javax.swing.JPanel {
+public class SupplierALT extends javax.swing.JPanel {
 
-    public Supplier() {
+    public SupplierALT() {
         initComponents();
     }
 
