@@ -363,7 +363,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="c_table">
+            <Component class="javax.swing.JTable" name="s_table">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="4">
@@ -398,7 +398,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="c_tableMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s_tableMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -427,7 +427,7 @@
                               <Component id="c_search" min="-2" pref="189" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="btncsearch" alignment="1" max="32767" attributes="0"/>
+                          <Component id="s_search" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -449,7 +449,7 @@
                           <Component id="c_search" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="btncsearch" min="-2" max="-2" attributes="0"/>
+                      <Component id="s_search" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -482,7 +482,7 @@
                 <Property name="text" type="java.lang.String" value="Search ID :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btncsearch">
+            <Component class="javax.swing.JButton" name="s_search">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -496,7 +496,7 @@
                 <Property name="text" type="java.lang.String" value="Search"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncsearchActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s_searchActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

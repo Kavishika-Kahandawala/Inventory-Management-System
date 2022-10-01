@@ -24,11 +24,11 @@ public class supplier extends javax.swing.JPanel {
     
     try{
     
-        DefaultTableModel dt = (DefaultTableModel) c_table.getModel();
+        DefaultTableModel dt = (DefaultTableModel) s_table.getModel();
         dt.setRowCount(0);
         
         Statement s = db.mycon().createStatement();
-        ResultSet rs = s.executeQuery(" SELECT * FROM customer ");
+        ResultSet rs = s.executeQuery(" SELECT * FROM supplier ");
         
         while (rs.next()){
         
@@ -77,12 +77,12 @@ public class supplier extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         s_email = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        c_table = new javax.swing.JTable();
+        s_table = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         c_search = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        btncsearch = new javax.swing.JButton();
+        s_search = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -261,7 +261,7 @@ public class supplier extends javax.swing.JPanel {
                 .addGap(56, 56, 56))
         );
 
-        c_table.setModel(new javax.swing.table.DefaultTableModel(
+        s_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -272,12 +272,12 @@ public class supplier extends javax.swing.JPanel {
                 "ID", "Name", "Company", "T.P Number", "Email"
             }
         ));
-        c_table.addMouseListener(new java.awt.event.MouseAdapter() {
+        s_table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                c_tableMouseClicked(evt);
+                s_tableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(c_table);
+        jScrollPane1.setViewportView(s_table);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -295,13 +295,13 @@ public class supplier extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Search ID :");
 
-        btncsearch.setBackground(new java.awt.Color(51, 51, 51));
-        btncsearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btncsearch.setForeground(new java.awt.Color(255, 255, 255));
-        btncsearch.setText("Search");
-        btncsearch.addActionListener(new java.awt.event.ActionListener() {
+        s_search.setBackground(new java.awt.Color(51, 51, 51));
+        s_search.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        s_search.setForeground(new java.awt.Color(255, 255, 255));
+        s_search.setText("Search");
+        s_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncsearchActionPerformed(evt);
+                s_searchActionPerformed(evt);
             }
         });
 
@@ -317,7 +317,7 @@ public class supplier extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(c_search, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 26, Short.MAX_VALUE))
-                    .addComponent(btncsearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(s_search, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -334,7 +334,7 @@ public class supplier extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(c_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(btncsearch)
+                .addComponent(s_search)
                 .addContainerGap())
         );
 
@@ -408,15 +408,15 @@ public class supplier extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btncsaveActionPerformed
 
-    private void btncsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncsearchActionPerformed
+    private void s_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_searchActionPerformed
         // Search suppliers
        
-        String search = c_search.getText();
+        String search = s_search.getText();
         try {
         
             Statement s = db.mycon().createStatement();
             
-            ResultSet rs = s.executeQuery("SELECT * FROM supplier WHERE Cid = '"+search+"'");
+            ResultSet rs = s.executeQuery("SELECT * FROM supplier WHERE sid = '"+search+"'");
             
             if (rs.next()){
             
@@ -432,7 +432,7 @@ public class supplier extends javax.swing.JPanel {
         
         table_load();
         
-    }//GEN-LAST:event_btncsearchActionPerformed
+    }//GEN-LAST:event_s_searchActionPerformed
 
     private void btncupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncupdateActionPerformed
         // Supplier Update
@@ -440,7 +440,7 @@ public class supplier extends javax.swing.JPanel {
         String name = s_name.getText();
         String tp = s_tp.getText();
         String company = s_company.getText();
-        String id = c_search.getText();
+        String id = s_search.getText();
         String email = s_email.getText();
         
         try{
@@ -450,7 +450,7 @@ public class supplier extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(null, "Fill Every Feild");
                 }
             else{
-            s.executeUpdate("UPDATE supplier SET supplier_Name='"+name+"', tp_Number = '"+tp+"',company = '"+company+"',sp_email = '"+email+"' WHERE cid = '"+id+"'");
+            s.executeUpdate("UPDATE supplier SET supplier_Name='"+name+"', tp_Number = '"+tp+"',company = '"+company+"',sp_email = '"+email+"' WHERE sid = '"+id+"'");
                 JOptionPane.showMessageDialog(null, "Supplier Data Updated");
             }
         
@@ -464,19 +464,19 @@ public class supplier extends javax.swing.JPanel {
     private void btncdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncdeleteActionPerformed
         // Supplier Delete
         
-        String id = c_search.getText();
+        String id = s_search.getText();
         
         
         try{
         
             Statement s = db.mycon().createStatement();
             
-            if(c_search.getText().equals("") ){
+            if(s_search.getText().equals("") ){
                     JOptionPane.showMessageDialog(null, "Fill Every Feild");
                 }
             
             else{
-            s.executeUpdate("DELETE  FROM supplier WHERE Cid ='"+id+"'");
+            s.executeUpdate("DELETE  FROM supplier WHERE sid ='"+id+"'");
                 JOptionPane.showMessageDialog(null, "Supplier Data Deleted");
             }
         
@@ -488,25 +488,25 @@ public class supplier extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btncdeleteActionPerformed
 
-    private void c_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c_tableMouseClicked
+    private void s_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s_tableMouseClicked
         // Mouse click get data to textfeild
         
-        int r = c_table.getSelectedRow();
+        int r = s_table.getSelectedRow();
         
-        String id = c_table.getValueAt(r, 0).toString();
-        String name = c_table.getValueAt(r,1).toString(); 
-        String tp = c_table.getValueAt(r,2).toString();
-        String company = c_table.getValueAt(r,3).toString();
-        String email = c_table.getValueAt(r,4).toString();
+        String id = s_table.getValueAt(r, 0).toString();
+        String name = s_table.getValueAt(r,1).toString(); 
+        String tp = s_table.getValueAt(r,2).toString();
+        String company = s_table.getValueAt(r,3).toString();
+        String email = s_table.getValueAt(r,4).toString();
         
-        c_search.setText(id);
+        s_search.setText(id);
         s_name.setText(name);
         s_tp.setText(tp);
         s_company.setText(company);
         s_email.setText(email);
         
         
-    }//GEN-LAST:event_c_tableMouseClicked
+    }//GEN-LAST:event_s_tableMouseClicked
 
     private void c_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_searchActionPerformed
 
@@ -545,7 +545,7 @@ public class supplier extends javax.swing.JPanel {
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
         // Clear Text feilds:
         
-        c_search.setText(" ");
+        s_search.setText(" ");
         s_name.setText(" ");
         s_tp.setText(" ");
         s_company.setText(" ");
@@ -562,10 +562,8 @@ public class supplier extends javax.swing.JPanel {
     private javax.swing.JButton btncdelete;
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btncsave;
-    private javax.swing.JButton btncsearch;
     private javax.swing.JButton btncupdate;
     private javax.swing.JTextField c_search;
-    private javax.swing.JTable c_table;
     private javax.swing.JLabel emailerror;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -579,6 +577,8 @@ public class supplier extends javax.swing.JPanel {
     private javax.swing.JTextField s_company;
     private javax.swing.JTextField s_email;
     private javax.swing.JTextField s_name;
+    private javax.swing.JButton s_search;
+    private javax.swing.JTable s_table;
     private javax.swing.JTextField s_tp;
     private javax.swing.JLabel sname;
     private javax.swing.JLabel tperror;
