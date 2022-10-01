@@ -18,7 +18,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         home_btn_grp = new javax.swing.ButtonGroup();
-        panel_load = new javax.swing.JPanel();
+        panel_loader = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -32,17 +32,17 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panel_load.setBackground(new java.awt.Color(255, 255, 255));
-        panel_load.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panel_loader.setBackground(new java.awt.Color(255, 255, 255));
+        panel_loader.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        javax.swing.GroupLayout panel_loadLayout = new javax.swing.GroupLayout(panel_load);
-        panel_load.setLayout(panel_loadLayout);
-        panel_loadLayout.setHorizontalGroup(
-            panel_loadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panel_loaderLayout = new javax.swing.GroupLayout(panel_loader);
+        panel_loader.setLayout(panel_loaderLayout);
+        panel_loaderLayout.setHorizontalGroup(
+            panel_loaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        panel_loadLayout.setVerticalGroup(
-            panel_loadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panel_loaderLayout.setVerticalGroup(
+            panel_loaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -66,11 +66,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jToggleButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton3.setText("Supplier");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
 
         jToggleButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton4.setText("Sales");
@@ -159,7 +154,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panel_load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(panel_loader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -170,7 +165,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panel_load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panel_loader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -180,7 +175,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
         Sales sal = new Sales();
-        jpload.jPanelLoader(panel_load,sal);
+        jpload.jPanelLoader(panel_loader,sal);
 
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
@@ -193,16 +188,9 @@ public class Dashboard extends javax.swing.JFrame {
         // Navigate to Customer
 
         Customer cus = new Customer();
-        jpload.jPanelLoader(panel_load, cus);
+        jpload.jPanelLoader(panel_loader, cus);
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        
-        supplier sp = new supplier();
-        jpload.jPanelLoader(panel_load, sp);
-        
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     
     public static void main(String args[]) {
@@ -231,6 +219,10 @@ public class Dashboard extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -252,6 +244,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JPanel panel_load;
+    private javax.swing.JPanel panel_loader;
     // End of variables declaration//GEN-END:variables
 }
