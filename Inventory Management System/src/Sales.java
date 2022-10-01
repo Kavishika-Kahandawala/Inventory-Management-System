@@ -5,7 +5,7 @@
 
 /**
  *
- * @author John Wick
+ * @author anjula
  */
 public class Sales extends javax.swing.JPanel {
 
