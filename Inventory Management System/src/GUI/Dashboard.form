@@ -99,7 +99,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jToggleButton8" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                       <Component id="jToggleButton7" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                      <Component id="jToggleButton5" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="btn_inv" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                       <Component id="jToggleButton3" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                       <Component id="jToggleButton4" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                       <Component id="jToggleButton2" min="-2" pref="140" max="-2" attributes="0"/>
@@ -113,7 +113,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="jToggleButton5" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="btn_inv" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jToggleButton1" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -173,13 +173,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton4ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+        <Component class="javax.swing.JToggleButton" name="btn_inv">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Inventory"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_invActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton7">
           <Properties>

@@ -1,4 +1,3 @@
-
 package GUI;
 
 import Code.JpanelLoader;
@@ -6,13 +5,12 @@ import Code.JpanelLoader;
 public class Dashboard extends javax.swing.JFrame {
 
     JpanelLoader jpload = new JpanelLoader();
-    
+
     public Dashboard() {
         initComponents();
         this.setExtendedState(Dashboard.MAXIMIZED_BOTH); //Use Fullscreen
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -24,7 +22,7 @@ public class Dashboard extends javax.swing.JFrame {
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        btn_inv = new javax.swing.JToggleButton();
         jToggleButton7 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
@@ -75,8 +73,13 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton5.setText("Inventory");
+        btn_inv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_inv.setText("Inventory");
+        btn_inv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_invActionPerformed(evt);
+            }
+        });
 
         jToggleButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton7.setText("Reports");
@@ -93,7 +96,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_inv, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -104,7 +107,7 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_inv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -175,7 +178,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
         Sales sal = new Sales();
-        jpload.jPanelLoader(panel_loader,sal);
+        jpload.jPanelLoader(panel_loader, sal);
 
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
@@ -192,7 +195,13 @@ public class Dashboard extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    
+    private void btn_invActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_invActionPerformed
+        // TODO add your handling code here:
+        //Inventory Load
+        inventory inv = new inventory();
+        jpload.jPanelLoader(panel_loader, inv);
+    }//GEN-LAST:event_btn_invActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -233,6 +242,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btn_inv;
     private javax.swing.ButtonGroup home_btn_grp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -241,7 +251,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JPanel panel_loader;

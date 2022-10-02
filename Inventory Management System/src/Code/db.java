@@ -23,7 +23,7 @@ public class db {
      try {
          
          Class.forName("com.mysql.jdbc.Driver");
-         con = DriverManager.getConnection("jdbc:mysql://localhost/ims","root","root");
+         con = DriverManager.getConnection("jdbc:mysql://localhost/ims","root","");
          System.out.println("Connection to db Established");
          return con;
          
