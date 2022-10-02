@@ -537,7 +537,36 @@ public class Sales extends javax.swing.JPanel {
     }//GEN-LAST:event_paid_amtActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // Data Send To Database
+        
+        try {
+            
+            // `cartid`, `INID`, `Product_Name`, `qty`, `Unit_Price`, `Total_Price`
+            DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
+            int rc=dt.getRowCount();
+            
+            for(int i=0; i<rc; i++){
+                String inid=dt.getValueAt(i ,0).toString();//get inid
+                String P_name=dt.getValueAt(i, 1).toString();//get product name
+                 String bar_code=dt.getValueAt(i, 2).toString();//get barcode
+                  String qty=dt.getValueAt(i, 3).toString();//get product qty
+                   String un_price=dt.getValueAt(i, 4).toString();//get product unit price
+                    String tot_price=dt.getValueAt(i, 5).toString();//get product total price
+                
+                    
+                    //cart DB
+            Statement s=db.mycon().createStatement();
+            s.executeUpdate("INSERT INTO cart( INID, Product_Name, qty, Unit_Price, Total_Price ) VALUE('"+inid+"','"+P_name+"','"+bar_code+"','"+qty+"','"+un_price+"','"+tot_price+"')");
+            
+            
+//            sales DB
+//           `saleid`, `INID`, `Cid`, `Customer_Name`, `Total_Qty`, `Total_Bill`, `Balance`
+            
+            }
+            JOptionPane.showMessageDialog(null,"Data Saved");
+            
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void p_qtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p_qtyActionPerformed
