@@ -15,6 +15,8 @@ public class Invoice extends javax.swing.JPanel {
 
     public Invoice() {
         initComponents();
+        datalad();
+                
     }
     
     public void datalad(){
@@ -30,12 +32,16 @@ public class Invoice extends javax.swing.JPanel {
                 
             Vector v = new Vector();
                 v.add(rs.getString(1));
+                v.add(rs.getString(2));
+                v.add(rs.getString(3));
+                v.add(rs.getString(4));
+                v.add(rs.getString(5));
                 
-            
+                dt.addRow(v);
             }
-            
-            
-        } catch (Exception e) {
+   
+        } catch (SQLException e) {
+            System.out.println(e);
         }
     }
 
