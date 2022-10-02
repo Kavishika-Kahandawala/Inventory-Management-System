@@ -161,6 +161,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Supplier"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton4">
           <Properties>
@@ -199,6 +202,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Invoice"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton8ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

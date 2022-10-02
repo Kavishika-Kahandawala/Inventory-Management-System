@@ -64,6 +64,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jToggleButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton3.setText("Supplier");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
 
         jToggleButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton4.setText("Sales");
@@ -86,6 +91,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jToggleButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton8.setText("Invoice");
+        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -184,6 +194,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // Navigate to Employee
+        employee emp = new employee();
+        jpload.jPanelLoader(panel_loader, emp);
 
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
@@ -201,6 +213,18 @@ public class Dashboard extends javax.swing.JFrame {
         inventory inv = new inventory();
         jpload.jPanelLoader(panel_loader, inv);
     }//GEN-LAST:event_btn_invActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        supplier sup = new supplier();
+        jpload.jPanelLoader(panel_loader, sup);
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+        // TODO add your handling code here:
+        Invoice invo = new Invoice();
+        jpload.jPanelLoader(panel_loader, invo);
+    }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

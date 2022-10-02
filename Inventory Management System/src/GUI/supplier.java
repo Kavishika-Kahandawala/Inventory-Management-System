@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class Supplier extends javax.swing.JPanel {
+public class supplier extends javax.swing.JPanel {
 
     
-    public Supplier() {
+    public supplier() {
         
         initComponents();
         table_load();
@@ -80,9 +80,9 @@ public class Supplier extends javax.swing.JPanel {
         s_table = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        c_search = new javax.swing.JTextField();
+        s_search = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        s_search = new javax.swing.JButton();
+        btnsearch = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -285,23 +285,23 @@ public class Supplier extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Supplier Management");
 
-        c_search.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        c_search.addActionListener(new java.awt.event.ActionListener() {
+        s_search.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        s_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_searchActionPerformed(evt);
+                s_searchActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Search ID :");
 
-        s_search.setBackground(new java.awt.Color(51, 51, 51));
-        s_search.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        s_search.setForeground(new java.awt.Color(255, 255, 255));
-        s_search.setText("Search");
-        s_search.addActionListener(new java.awt.event.ActionListener() {
+        btnsearch.setBackground(new java.awt.Color(51, 51, 51));
+        btnsearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsearch.setForeground(new java.awt.Color(255, 255, 255));
+        btnsearch.setText("Search");
+        btnsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                s_searchActionPerformed(evt);
+                btnsearchActionPerformed(evt);
             }
         });
 
@@ -315,9 +315,9 @@ public class Supplier extends javax.swing.JPanel {
                         .addGap(33, 33, 33)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(c_search, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(s_search, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 26, Short.MAX_VALUE))
-                    .addComponent(s_search, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnsearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -332,9 +332,9 @@ public class Supplier extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(c_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(s_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(s_search)
+                .addComponent(btnsearch)
                 .addContainerGap())
         );
 
@@ -408,10 +408,10 @@ public class Supplier extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btncsaveActionPerformed
 
-    private void s_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_searchActionPerformed
+    private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
         // Search suppliers
        
-        String search = s_search.getText();
+        String search = btnsearch.getText();
         try {
         
             Statement s = db.mycon().createStatement();
@@ -432,7 +432,7 @@ public class Supplier extends javax.swing.JPanel {
         
         table_load();
         
-    }//GEN-LAST:event_s_searchActionPerformed
+    }//GEN-LAST:event_btnsearchActionPerformed
 
     private void btncupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncupdateActionPerformed
         // Supplier Update
@@ -440,7 +440,7 @@ public class Supplier extends javax.swing.JPanel {
         String name = s_name.getText();
         String tp = s_tp.getText();
         String company = s_company.getText();
-        String id = s_search.getText();
+        String id = btnsearch.getText();
         String email = s_email.getText();
         
         try{
@@ -464,14 +464,14 @@ public class Supplier extends javax.swing.JPanel {
     private void btncdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncdeleteActionPerformed
         // Supplier Delete
         
-        String id = s_search.getText();
+        String id = btnsearch.getText();
         
         
         try{
         
             Statement s = db.mycon().createStatement();
             
-            if(s_search.getText().equals("") ){
+            if(btnsearch.getText().equals("") ){
                     JOptionPane.showMessageDialog(null, "Fill Every Feild");
                 }
             
@@ -499,7 +499,7 @@ public class Supplier extends javax.swing.JPanel {
         String company = s_table.getValueAt(r,3).toString();
         String email = s_table.getValueAt(r,4).toString();
         
-        s_search.setText(id);
+        //s_search.setText(id);
         s_name.setText(name);
         s_tp.setText(tp);
         s_company.setText(company);
@@ -508,9 +508,9 @@ public class Supplier extends javax.swing.JPanel {
         
     }//GEN-LAST:event_s_tableMouseClicked
 
-    private void c_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_searchActionPerformed
+    private void s_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_searchActionPerformed
 
-    }//GEN-LAST:event_c_searchActionPerformed
+    }//GEN-LAST:event_s_searchActionPerformed
 
     private void s_companyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_s_companyKeyReleased
         // Validate Email address
@@ -563,7 +563,7 @@ public class Supplier extends javax.swing.JPanel {
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btncsave;
     private javax.swing.JButton btncupdate;
-    private javax.swing.JTextField c_search;
+    private javax.swing.JButton btnsearch;
     private javax.swing.JLabel emailerror;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -577,7 +577,7 @@ public class Supplier extends javax.swing.JPanel {
     private javax.swing.JTextField s_company;
     private javax.swing.JTextField s_email;
     private javax.swing.JTextField s_name;
-    private javax.swing.JButton s_search;
+    private javax.swing.JTextField s_search;
     private javax.swing.JTable s_table;
     private javax.swing.JTextField s_tp;
     private javax.swing.JLabel sname;

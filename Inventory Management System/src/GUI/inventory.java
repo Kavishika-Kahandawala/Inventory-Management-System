@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Kavishika
-
+ *
  */
 public class inventory extends javax.swing.JPanel {
 
@@ -592,11 +592,11 @@ public class inventory extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         //delete product
-        String search = txt_search.getText();
+        String pid = txt_pid.getText();
 
         try {
             Statement st = db.mycon().createStatement();
-            st.executeUpdate("UPDATE inventory SET status='" + 0 + "' WHERE pname='" + search + "'");
+            st.executeUpdate("UPDATE inventory SET status='" + 0 + "' WHERE pid='" + pid + "'");
             JOptionPane.showMessageDialog(null, "Product has been deleted from inventory");
         } catch (Exception error) {
             System.out.println(error);
