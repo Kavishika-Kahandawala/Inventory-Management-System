@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class supplier extends javax.swing.JPanel {
+public class Supplier extends javax.swing.JPanel {
 
     
-    public supplier() {
+    public Supplier() {
         
         initComponents();
         table_load();
