@@ -19,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Kavishika
+
  */
 public class inventory extends javax.swing.JPanel {
 
@@ -245,6 +246,7 @@ public class inventory extends javax.swing.JPanel {
         });
 
         btn_delete.setBackground(new java.awt.Color(225, 77, 42));
+
         btn_delete.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btn_delete.setText("Delete");
         btn_delete.addActionListener(new java.awt.event.ActionListener() {
@@ -340,6 +342,7 @@ public class inventory extends javax.swing.JPanel {
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lbl_sname.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -379,6 +382,7 @@ public class inventory extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -436,6 +440,7 @@ public class inventory extends javax.swing.JPanel {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+
                 .addContainerGap())
         );
         layout.setVerticalGroup(
