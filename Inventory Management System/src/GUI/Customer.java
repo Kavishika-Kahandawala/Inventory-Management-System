@@ -39,6 +39,7 @@ public class Customer extends javax.swing.JPanel {
             v.add(rs.getString(3));
             v.add(rs.getString(4));
             v.add(rs.getString(5));
+            v.add(rs.getString(6));
             
             dt.addRow(v);
             
