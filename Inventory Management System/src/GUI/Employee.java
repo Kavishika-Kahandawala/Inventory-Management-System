@@ -266,7 +266,7 @@ public class employee extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Role", "T.P Number", "Email"
+                "ID", "Name", "T.P Number", "Role", "Email"
             }
         ));
         e_table.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -437,7 +437,7 @@ public class employee extends javax.swing.JPanel {
         String name = e_name.getText();
         String tp = e_tp.getText();
         String Role = e_role.getText();
-        String id = btnsearch.getText();
+        String id = e_search.getText();
         String email = e_email.getText();
         
         try{

@@ -5,7 +5,6 @@
 package GUI;
 
 import Code.db;
-import com.mysql.cj.util.SearchMode;
 import java.awt.HeadlessException;
 import java.awt.TextArea;
 import java.sql.ResultSet;
@@ -147,22 +146,22 @@ public class inventory extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lbl_pid.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_pid.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_pid.setText("Product ID");
 
-        lbl_pname.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_pname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_pname.setText("Product Name");
 
-        lbl_barcode.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_barcode.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_barcode.setText("Bar Code");
 
-        lbl_cprice.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_cprice.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_cprice.setText("Cost Price");
 
-        lbl_quantity.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_quantity.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_quantity.setText("Stock Quantity");
 
-        lbl_sid.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_sid.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_sid.setText("Supplier's ID");
 
         txt_pid.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +200,7 @@ public class inventory extends javax.swing.JPanel {
             }
         });
 
-        lbl_sprice.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_sprice.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_sprice.setText("Seliing Price");
 
         txt_sprice.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +209,7 @@ public class inventory extends javax.swing.JPanel {
             }
         });
 
-        chk_active.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        chk_active.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         chk_active.setText("Active");
         chk_active.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +219,7 @@ public class inventory extends javax.swing.JPanel {
 
         btn_clear.setBackground(new java.awt.Color(51, 51, 51));
         btn_clear.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
         btn_clear.setText("Clear");
         btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,6 +229,7 @@ public class inventory extends javax.swing.JPanel {
 
         btn_save.setBackground(new java.awt.Color(51, 51, 51));
         btn_save.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btn_save.setForeground(new java.awt.Color(255, 255, 255));
         btn_save.setText("Add");
         btn_save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,6 +239,7 @@ public class inventory extends javax.swing.JPanel {
 
         btn_update.setBackground(new java.awt.Color(51, 51, 51));
         btn_update.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btn_update.setForeground(new java.awt.Color(255, 255, 255));
         btn_update.setText("Update");
         btn_update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,8 +248,8 @@ public class inventory extends javax.swing.JPanel {
         });
 
         btn_delete.setBackground(new java.awt.Color(225, 77, 42));
-
         btn_delete.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btn_delete.setForeground(new java.awt.Color(255, 255, 255));
         btn_delete.setText("Delete");
         btn_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,10 +344,9 @@ public class inventory extends javax.swing.JPanel {
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lbl_sname.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbl_sname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_sname.setText("Product Name");
 
         txt_search.addActionListener(new java.awt.event.ActionListener() {
@@ -359,6 +360,7 @@ public class inventory extends javax.swing.JPanel {
 
         btn_search.setBackground(new java.awt.Color(51, 51, 51));
         btn_search.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btn_search.setForeground(new java.awt.Color(255, 255, 255));
         btn_search.setText("Search");
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,7 +384,6 @@ public class inventory extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,8 +440,7 @@ public class inventory extends javax.swing.JPanel {
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
-
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(

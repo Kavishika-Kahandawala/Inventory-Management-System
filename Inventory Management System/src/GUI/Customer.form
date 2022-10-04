@@ -129,7 +129,7 @@
                                           <Component id="c_fname" min="-2" pref="189" max="-2" attributes="0"/>
                                           <Component id="c_lname" min="-2" pref="189" max="-2" attributes="0"/>
                                           <Component id="c_tp" min="-2" pref="189" max="-2" attributes="0"/>
-                                          <Component id="s_email" min="-2" pref="189" max="-2" attributes="0"/>
+                                          <Component id="c_email" min="-2" pref="189" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="btncsave" alignment="1" min="-2" pref="278" max="-2" attributes="0"/>
@@ -171,7 +171,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="s_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="c_email" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="emailerror" min="-2" pref="26" max="-2" attributes="0"/>
@@ -291,14 +291,14 @@
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="c_tpKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="s_email">
+            <Component class="javax.swing.JTextField" name="c_email">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="s_emailKeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="c_emailKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">

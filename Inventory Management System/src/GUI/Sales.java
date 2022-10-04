@@ -28,7 +28,7 @@ public class Sales extends javax.swing.JPanel {
             
             Vector v = new Vector();
             while (rs.next()) {                
-                v.add(rs.getString("customer_name"));
+                v.add(rs.getString("Customer_FirstName"));
                 
                 DefaultComboBoxModel com = new DefaultComboBoxModel(v);
                 com_cus.setModel(com);
@@ -517,6 +517,7 @@ public class Sales extends javax.swing.JPanel {
             dt.removeRow(rw);
             
         } catch (Exception e) {
+            System.out.println(e);
         }
         cart_total();
         tot();

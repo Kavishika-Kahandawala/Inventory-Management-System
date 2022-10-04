@@ -39,6 +39,7 @@ public class Customer extends javax.swing.JPanel {
             v.add(rs.getString(3));
             v.add(rs.getString(4));
             v.add(rs.getString(5));
+            v.add(rs.getString(6));
             
             dt.addRow(v);
             
@@ -71,7 +72,7 @@ public class Customer extends javax.swing.JPanel {
         btncdelete = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         c_tp = new javax.swing.JTextField();
-        s_email = new javax.swing.JTextField();
+        c_email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         tperror = new javax.swing.JLabel();
         emailerror = new javax.swing.JLabel();
@@ -147,10 +148,10 @@ public class Customer extends javax.swing.JPanel {
             }
         });
 
-        s_email.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        s_email.addKeyListener(new java.awt.event.KeyAdapter() {
+        c_email.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c_email.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                s_emailKeyReleased(evt);
+                c_emailKeyReleased(evt);
             }
         });
 
@@ -198,7 +199,7 @@ public class Customer extends javax.swing.JPanel {
                                     .addComponent(c_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(c_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(c_tp, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(s_email, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btncsave, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -229,7 +230,7 @@ public class Customer extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(s_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(emailerror, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -388,17 +389,18 @@ public class Customer extends javax.swing.JPanel {
         String fname = c_fname.getText();
         String lname = c_lname.getText();
         String tp = c_tp.getText();
-        String email = s_email.getText();
+        String email = c_email.getText();
         
         try {
         
             Statement s = db.mycon().createStatement();
             
-            if(c_fname.getText().equals("") ||c_lname.getText().equals("") || c_tp.getText().equals("") || s_email.getText().equals("") ){
+            if(c_fname.getText().equals("") ||c_lname.getText().equals("") || c_tp.getText().equals("") || c_email.getText().equals("") ){
                     JOptionPane.showMessageDialog(null, "Fill every feild");
                 }
             
             else{
+                
             s.executeUpdate("INSERT INTO customer (Customer_FirstName,Customer_LastName,Customer_TP,Customer_Email) VALUES ('"+fname+"','"+lname+"','"+tp+"','"+email+"')");
                 JOptionPane.showMessageDialog(null, "Customer Data Saved");
             
@@ -409,6 +411,21 @@ public class Customer extends javax.swing.JPanel {
             
    
         }
+//            String fname = c_fname.getText();
+//            String lname = c_lname.getText();
+//            String tp = c_tp.getText();
+//            String email = c_email.getText();
+//        try {
+//            
+//         Statement s = db.mycon().createStatement();
+//         s.executeUpdate(" INSERT INTO customer (Customer_FirstName,Customer_LastName,Customer_TP,Customer_Email) VALUES ('"+fname+"','"+lname+"','"+tp+"','"+email+"')");
+//            JOptionPane.showMessageDialog(null, "Dtata saved");
+//         
+//         
+//         
+//        } catch (SQLException e) {
+//            System.out.println(e);
+//        }
         
         table_load();
         
@@ -429,7 +446,7 @@ public class Customer extends javax.swing.JPanel {
                 c_fname.setText(rs.getString("Customer_FirstName"));
                 c_lname.setText(rs.getString("Customer_LastName"));
                 c_tp.setText(rs.getString("Customer_TP"));
-                s_email.setText(rs.getString("Customer_Email"));
+                c_email.setText(rs.getString("Customer_Email"));
                 
             }
         } catch(SQLException e){
@@ -446,13 +463,13 @@ public class Customer extends javax.swing.JPanel {
         String fname = c_fname.getText();
         String lname = c_lname.getText();
         String tp = c_tp.getText();
-        String email = s_email.getText();
+        String email = c_email.getText();
         String id = c_search.getText();
         
         try{
         
             Statement s = db.mycon().createStatement();
-            if(c_fname.getText().equals("") ||c_lname.getText().equals("") || c_tp.getText().equals("") || s_email.getText().equals("") ){
+            if(c_fname.getText().equals("") ||c_lname.getText().equals("") || c_tp.getText().equals("") || c_email.getText().equals("") ){
                     JOptionPane.showMessageDialog(null, "Fill every feild");
                 }
             else{
@@ -502,14 +519,14 @@ public class Customer extends javax.swing.JPanel {
         String id = c_table.getValueAt(r, 0).toString();
         String fname = c_table.getValueAt(r,1).toString(); 
         String lname = c_table.getValueAt(r,2).toString(); 
-        String tp = c_table.getValueAt(r,2).toString();
-        String email = c_table.getValueAt(r,2).toString();
+        String tp = c_table.getValueAt(r,3).toString();
+        String email = c_table.getValueAt(r,4).toString();
         
         c_search.setText(id);
         c_fname.setText(fname);
         c_lname.setText(lname);
         c_tp.setText(tp);
-        s_email.setText(email);
+        c_email.setText(email);
         
         
     }//GEN-LAST:event_c_tableMouseClicked
@@ -552,7 +569,7 @@ public class Customer extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_c_searchActionPerformed
 
-    private void s_emailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_s_emailKeyReleased
+    private void c_emailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_c_emailKeyReleased
         // Validate Email address
         
         String PATTERN =  "^[a-zA-Z0-9_+&*-]+(?:\\."+
@@ -560,7 +577,7 @@ public class Customer extends javax.swing.JPanel {
                             "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                             "A-Z]{2,7}$";
         Pattern patt = Pattern.compile(PATTERN);
-        Matcher match = patt.matcher(s_email.getText());
+        Matcher match = patt.matcher(c_email.getText());
             if(!match.matches()){
                 emailerror.setText("Invalid Email");
             }
@@ -569,7 +586,7 @@ public class Customer extends javax.swing.JPanel {
             }
         
         
-    }//GEN-LAST:event_s_emailKeyReleased
+    }//GEN-LAST:event_c_emailKeyReleased
 
     private void c_tpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_c_tpKeyReleased
         // Validate TP number
@@ -589,7 +606,7 @@ public class Customer extends javax.swing.JPanel {
         c_fname.setText(" ");
         c_lname.setText(" ");
         c_tp.setText(" ");
-        s_email.setText(" ");
+        c_email.setText(" ");
         
     }//GEN-LAST:event_btnclearActionPerformed
 
@@ -600,6 +617,7 @@ public class Customer extends javax.swing.JPanel {
     private javax.swing.JButton btncsave;
     private javax.swing.JButton btncsearch;
     private javax.swing.JButton btncupdate;
+    private javax.swing.JTextField c_email;
     private javax.swing.JTextField c_fname;
     private javax.swing.JTextField c_lname;
     private javax.swing.JTextField c_search;
@@ -618,7 +636,6 @@ public class Customer extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField s_email;
     private javax.swing.JLabel tperror;
     // End of variables declaration//GEN-END:variables
 }
